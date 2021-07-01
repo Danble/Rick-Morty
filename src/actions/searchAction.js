@@ -40,7 +40,7 @@ const fetchCharacters = (character, history) => {
       .then(res => {
         dispatch(charactersSuccess(res.data.results));
         //Redirecting to characters
-        history.push('/characters')
+        history.push('/Rick-Morty/characters')
       })
       // Aquí podemos manejar más errores: falló de conexión p.e.
       .catch(err => {
