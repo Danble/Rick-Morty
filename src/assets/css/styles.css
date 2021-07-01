@@ -1,0 +1,96 @@
+main {
+  display: flex !important;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url(../images/rick-and-morty.jpg);
+  width: 100vw;
+  height: 100vh;
+}
+
+.search-bar {
+  align-items: center;
+}
+
+.round {
+  border-radius: 19px !important;
+}
+
+.search-btn {
+  margin-left: 7px;
+  width: 15rem;
+  color: rgb(255, 255, 255) !important;
+  border-color: rgb(255, 255, 255) !important;
+  border-radius: 19px !important;
+}
+
+.search-btn:hover {
+  background-color: rgb(16, 58, 87) !important;
+}
+
+.search-btn:focus {
+  box-shadow: 0 0 0 0.1rem aqua !important;
+}
+
+.characters {
+  margin: auto !important;
+  padding-top: 24px !important;
+  background: rgb(121, 9, 117);
+  background: linear-gradient(
+    149deg,
+    rgba(121, 9, 117, 1) 12%,
+    rgba(127, 0, 255, 0.3874592073157388) 97%
+  );
+}
+
+.char-card {
+  padding-top: 1rem !important;
+  box-sizing: border-box !important;
+  border: 3px solid transparent !important;
+  border-radius: 8px !important;
+  background-clip: padding-box !important;
+}
+
+.char-card img {
+  border-radius: 50%;
+}
+
+.sprite {
+  position: absolute;
+  top: 45%;
+  height: 105px;
+  width: 105px;
+  overflow: hidden;
+  background-color: rgb(250, 250, 250, 0.28);
+  border-radius: 9px;
+}
+
+.sprite img {
+  width: 105px;
+  height: auto;
+  animation: spinner 1900ms steps(46) infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.error {
+  color: rgb(158, 49, 49);
+  align-self: center;
+  text-align: center;
+}
+
+.error p {
+  height: fit-content;
+  background-color: rgb(256, 256, 256, 0.6);
+  padding: 0.35rem;
+  border-radius: 7px;
+  font-size: xx-large;
+  margin-bottom: 0.4rem;
+}
