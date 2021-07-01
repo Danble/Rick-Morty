@@ -7,9 +7,9 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route exact path="/" component={Home} />
-        <Route exact path="/characters" component={Characters} />
-        <Route exact path="/character" component={Character} />
+        <Route exact path="/Rick-Morty/" component={Home} />
+        <Route exact path="/Rick-Morty/characters" component={Characters} />
+        <Route exact path="/Rick-Morty/character" component={Character} />
       </Switch>
     </BrowserRouter>
   );
