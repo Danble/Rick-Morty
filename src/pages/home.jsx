@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import '../assets/css/styles.css'
 import {useDispatch, useSelector} from 'react-redux'
 import fetchCharacters from '../actions/searchAction';
@@ -15,6 +15,17 @@ export default function Home() {
   const history = useHistory();
   const dispatch = useDispatch();
   const [char, setChar] = useState(null);
+  const [iWidth, setIWidth] = useState(window.innerWidth)
+  
+  //Testeando
+  useEffect(() => {
+    function reportWindowSize() {
+        setIWidth(window.innerWidth);
+    }
+    window.addEventListener('resize', reportWindowSize);
+    //  Cleanup for componentWillUnmount
+    return () => window.removeEventListener('resize', reportWindowSize);
+  }, []);
 
   return (
     <main>
@@ -28,7 +39,7 @@ export default function Home() {
         <button 
           onClick={e => getChars(e, dispatch, char, history)}
           className="btn btn-outline-success search-btn"
-          type="submit">{window.innerWidth > 425 ? 'Buscar personajes' : 'Buscar'}
+          type="submit">{iWidth > 425 ? 'Buscar personajes' : 'Buscar'}
         </button>
       </form>}
       {data.loading &&
