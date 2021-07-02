@@ -25,11 +25,16 @@ export default function Home() {
           type="search" onChange={e => setChar(e.target.value)}
           placeholder="Rick Sanchez"
           aria-label="Search" />
-        <button 
+        {window.innerWidth > 425 && <button 
           onClick={e => getChars(e, dispatch, char, history)}
           className="btn btn-outline-success search-btn"
           type="submit">Buscar personajes
-        </button>
+        </button>}
+        {window.innerWidth <= 425 && <button 
+          onClick={e => getChars(e, dispatch, char, history)}
+          className="btn btn-outline-success search-btn"
+          type="submit">Buscar
+        </button>}
       </form>}
       {data.loading &&
       <div className="sprite">

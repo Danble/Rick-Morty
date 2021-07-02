@@ -8,6 +8,12 @@ main {
   height: 100vh;
 }
 
+@media screen and (max-width: 425px) {
+  main {
+    background-image: url(../images/rick-and-morty-smartphone.jpg);
+  }
+}
+
 .search-bar {
   align-items: center;
 }
