@@ -1,0 +1,61 @@
+@import "./variables";
+
+.characters {
+  margin: auto !important;
+  padding-top: 24px !important;
+  background: rgb(121, 9, 117);
+  background: linear-gradient(
+    149deg,
+    rgba(121, 9, 117, 1) 12%,
+    rgba(127, 0, 255, 0.3874592073157388) 97%
+  );
+}
+
+.char-card {
+  padding-top: 1rem !important;
+  box-sizing: border-box !important;
+  border: 3px solid transparent !important;
+  border-radius: 8px !important;
+  background-clip: padding-box !important;
+  & img {
+    border-radius: 50%;
+  }
+}
+
+.sprite {
+  position: absolute;
+  top: 45%;
+  height: $sprite-width;
+  width: $sprite-width;
+  overflow: hidden;
+  background-color: rgba(256, 256, 256, 0.28);
+  border-radius: 9px;
+  & img {
+    width: $sprite-width;
+    height: auto;
+    animation: spinner 1900ms steps(46) infinite;
+  }
+}
+
+@keyframes spinner {
+  0% {
+    transform: translateY(0px);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+.error {
+  color: rgb(158, 49, 49);
+  align-self: center;
+  text-align: center;
+  & p {
+    height: fit-content;
+    background-color: rgba(256, 256, 256, 0.6);
+    padding: 0.35rem;
+    border-radius: 7px;
+    font-size: xx-large;
+    margin-bottom: 0.4rem;
+  }
+}

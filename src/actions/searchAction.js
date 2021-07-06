@@ -1,5 +1,4 @@
 import axios from 'axios';
-//import { push } from 'react-router-dom'
 
 export const CHARACTERS_REQUEST = "CHARACTERS_REQUEST";
 export const CHARACTERS_DEFAULT = "CHARACTERS_DEFAULT";
@@ -42,7 +41,6 @@ const fetchCharacters = (character, history) => {
         //Redirecting to characters
         history.push('/Rick-Morty/characters')
       })
-      // Aquí podemos manejar más errores: falló de conexión p.e.
       .catch(err => {
         if(err.response) {
           if(err.response.status === 404) {

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import '../assets/css/styles.css'
+import '../assets/styles/polish.css'
 import {useDispatch, useSelector} from 'react-redux'
 import fetchCharacters from '../actions/searchAction';
 import {useHistory} from 'react-router-dom'
@@ -17,7 +17,6 @@ export default function Home() {
   const [char, setChar] = useState(null);
   const [iWidth, setIWidth] = useState(window.innerWidth)
   
-  //Testeando
   useEffect(() => {
     function reportWindowSize() {
         setIWidth(window.innerWidth);
@@ -25,7 +24,7 @@ export default function Home() {
     window.addEventListener('resize', reportWindowSize);
     //  Cleanup for componentWillUnmount
     return () => window.removeEventListener('resize', reportWindowSize);
-  }, []);
+  }, /* Honestly I think this is necessary... */ []);
 
   return (
     <main>
@@ -44,7 +43,6 @@ export default function Home() {
       </form>}
       {data.loading &&
       <div className="sprite">
-        {/* Posiblemente lo mejor sea poner un mensaje con animación ligera */}
         <img src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/97424/sprite-spinner.png" alt="loading" />
       </div>}
       {!data.loading && data.error &&
