@@ -17,8 +17,13 @@
   border: 3px solid transparent !important;
   border-radius: 8px !important;
   background-clip: padding-box !important;
+  cursor: pointer;
   & img {
     border-radius: 50%;
+  }
+  &:hover {
+    /*testing... Chage it to a nice animation*/
+    background-color: azure;
   }
 }
 

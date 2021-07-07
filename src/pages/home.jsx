@@ -2,7 +2,7 @@ import React from 'react';
 import { useState, useEffect } from 'react';
 import '../assets/styles/polish.css'
 import {useDispatch, useSelector} from 'react-redux'
-import fetchCharacters from '../actions/searchAction';
+import fetchCharacters from '../store/actions/searchAction';
 import {useHistory} from 'react-router-dom'
 
 function getChars(e, dispatcher, chars, history){

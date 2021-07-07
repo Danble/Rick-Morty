@@ -1,12 +1,18 @@
+import { useSelector } from 'react-redux'
 
-
-export default function Character() {
-  //const estado = useSelector(state => state.charList);
-  //const dispatch = useDispatch();
+function Photo({image, title}) {
   return (
     <div>
-      <button>+</button>
-      <p>{/* estado ? estado.value : '' */}</p>
+      <img src={image} alt={title} />
+    </div>
+  );
+}
+
+export default function Character() {
+  const data = useSelector(state => state.getChar);
+  return (
+    <div>
+      <Photo image={data.character.image} title={data.character.name} />
     </div>
   );
 }
