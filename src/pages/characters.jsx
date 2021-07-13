@@ -3,6 +3,7 @@ import fetchUniqueChar from "../store/actions/getCharAction";
 import { useHistory } from "react-router-dom";
 
 export default function Characters() {
+  //TODO add loader to cards when clicked 
   const data = useSelector(state => state.search);
   const dispatch = useDispatch();
   const history = useHistory();

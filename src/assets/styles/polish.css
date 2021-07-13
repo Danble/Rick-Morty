@@ -63,12 +63,18 @@ main {
 }
 
 .char-card img {
+  -webkit-transition: all 0.17s ease;
+  transition: all 0.17s ease;
   border-radius: 50%;
 }
 
 .char-card:hover {
-  /*testing... Chage it to a nice animation*/
-  background-color: azure;
+  background-color: #ebfdf5;
+}
+
+.char-card:hover img {
+  -webkit-transform: scale(1.22);
+          transform: scale(1.22);
 }
 
 .sprite {
@@ -127,5 +133,52 @@ main {
   border-radius: 7px;
   font-size: xx-large;
   margin-bottom: 0.4rem;
+}
+
+.canvas {
+  height: 100%;
+  background-color: #201f1e;
+  color: #dddace;
+  font-family: "Patrick Hand SC", cursive;
+}
+
+.photo {
+  margin: 28px;
+  font-family: "Patrick Hand", cursive;
+  font-size: 2.8rem;
+}
+
+.photo img {
+  border-radius: 21px;
+}
+
+.main {
+  -ms-grid-columns: 2fr 1fr;
+      grid-template-columns: 2fr 1fr;
+}
+
+.main-data {
+  margin-left: 28px;
+  padding-bottom: 30px;
+}
+
+.bonus {
+  padding-left: 3%;
+  padding-top: 14em;
+}
+
+@media screen and (max-width: 505px) {
+  .main {
+    -ms-grid-columns: 1fr;
+        grid-template-columns: 1fr;
+  }
+  .main-data {
+    padding-bottom: 0px;
+  }
+  .bonus {
+    padding-top: 0px;
+    padding-left: 0%;
+    margin-left: 28px;
+  }
 }
 /*# sourceMappingURL=polish.css.map */

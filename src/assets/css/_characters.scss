@@ -19,11 +19,14 @@
   background-clip: padding-box !important;
   cursor: pointer;
   & img {
+    transition: all 0.17s ease;
     border-radius: 50%;
   }
   &:hover {
-    /*testing... Chage it to a nice animation*/
-    background-color: azure;
+    background-color: rgb(235, 253, 245);
+    & img {
+      transform: scale(1.22);
+    }
   }
 }
 
