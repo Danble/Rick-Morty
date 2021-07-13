@@ -18,19 +18,20 @@ export default function Characters() {
           <img src={char.image} className="img-fluid rounded-start" alt={char.name} />
         </div>
         <div className="col-md-8">
+          {data.loading ? "Loading..." :
           <div className="card-body">
             <h5 className="card-title">{char.name}</h5>
             <p className="card-text">Species: <small className="text-muted">{char.species}</small></p>
             <p className="card-text">Status: <small className="text-muted">{char.status}</small></p>
             <p className="card-text">Gender: <small className="text-muted">{char.gender}</small></p>
-          </div>
+          </div>}
         </div>
       </div>
     </div>
   ))
   return (
     <div className="container characters row">
-      {data.loading ? 'Loading...' : characters}
+      {characters}
     </div>
   )
 }

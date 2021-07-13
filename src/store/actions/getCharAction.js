@@ -28,7 +28,6 @@ const fetchUniqueChar = (id, history) => {
     dispatch(characterRequest());
     axios.get(`https://rickandmortyapi.com/api/character/${id}`)
     .then(res => {
-      console.log(res.data);
       dispatch(characterSuccess(res.data));
       history.push(`/Rick-Morty/${id}`)
     })
