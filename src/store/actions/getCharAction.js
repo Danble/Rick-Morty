@@ -1,4 +1,7 @@
 import axios from "axios";
+// Sweet alert
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 
 export const CHARACTER_REQUEST = "CHARACTER_REQUEST";
 export const CHARACTER_SUCCESS = "CHARACTER_SUCCESS";
@@ -33,6 +36,15 @@ const fetchUniqueChar = (id, history) => {
     })
     .catch(err => {
       console.log(err);
+      // Lanzo un mensaje de sweet alert si hay un error (generalmente será de conexión).
+      const MySwal = withReactContent(Swal)
+      MySwal.fire({
+        title: '¡Error!',
+        text: 'Ha habido un error inesperado',
+        icon: 'error',
+        confirmButtonText: '¡Esto apesta!',
+        confirmButtonColor: 'rgb(80, 173, 177)' 
+      })
       dispatch(characterError("Ha habido un error inesperado"));
     });
   }
