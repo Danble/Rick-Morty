@@ -12,7 +12,6 @@ export default function Characters() {
   const characters = data.characters.map(char => (
     <div
       onClick={e => {
-        console.dir(e.target.closest('.char-card').id);
         setElement(e.target.closest('.char-card').id);
         dispatch(fetchUniqueChar(char.id, history))
       }}
@@ -26,23 +25,13 @@ export default function Characters() {
           <img src={char.image} className="img-fluid rounded-start" alt={char.name} />
         </div>
         <div className="col-md-8">
-          {(character.loading && document.getElementById(char.id) && element !== document.getElementById(char.id).id &&
+          {character.loading && (element === document.getElementById(char.id).id) ? 'Loading...' :
           <div className="card-body">
-            <h5 className="card-title">{char.name}-{char.id}</h5>
+            <h5 className="card-title">{char.name}</h5>
             <p className="card-text">Species: <small className="text-muted">{char.species}</small></p>
             <p className="card-text">Status: <small className="text-muted">{char.status}</small></p>
             <p className="card-text">Gender: <small className="text-muted">{char.gender}</small></p>
-          </div>) || (!character.loading &&
-          <div className="card-body">
-            <h5 className="card-title">{char.name}-{char.id}</h5>
-            <p className="card-text">Species: <small className="text-muted">{char.species}</small></p>
-            <p className="card-text">Status: <small className="text-muted">{char.status}</small></p>
-            <p className="card-text">Gender: <small className="text-muted">{char.gender}</small></p>
-          </div>)}
-          {character.loading && element === document.getElementById(char.id).id &&
-            <p>Loading...</p>
-          }
-          {/*TODO creo que con le operador ternario se puede evitar repetir el código html */}
+          </div>}
         </div>
       </div>
     </div>
